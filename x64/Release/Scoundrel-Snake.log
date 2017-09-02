@@ -1,5 +1,29 @@
-﻿  main.cpp
+﻿  GraphicsFactory.cpp
+GraphicsFactory.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Rat.cpp
+Rat.cpp(4): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(18): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(20): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(24): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Rat.cpp(41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Rat.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(75): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(81): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(87): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(93): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Scoundrel Snake.cpp
+  Snake.cpp
+Snake.cpp(5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Snake.cpp(6): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating code
-  All 29 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  104 of 104 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    100 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Scoundrel-Snake.vcxproj -> c:\users\adenh\documents\visual studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe
