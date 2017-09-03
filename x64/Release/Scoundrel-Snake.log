@@ -1,29 +1,22 @@
-﻿  GraphicsFactory.cpp
-GraphicsFactory.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-GraphicsFactory.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-GraphicsFactory.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-GraphicsFactory.cpp(7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Rat.cpp
-Rat.cpp(4): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(18): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(20): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(24): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-Rat.cpp(41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-Rat.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(75): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(81): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(87): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Rat.cpp(93): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+﻿  PlayerControl.cpp
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\PlayerControl.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+PlayerControl.cpp(65): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(68): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(71): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(74): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(78): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(79): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(84): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(85): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(90): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(91): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(96): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(97): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   Scoundrel Snake.cpp
-  Snake.cpp
-Snake.cpp(5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Snake.cpp(6): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\PlayerControl.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Generating code
-  104 of 104 functions (100.0%) were compiled, the rest were copied from previous compilation.
-    100 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  4 of 211 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Scoundrel-Snake.vcxproj -> c:\users\adenh\documents\visual studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe
+  Scoundrel-Snake.vcxproj -> C:\Users\adenh\Documents\Visual Studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe

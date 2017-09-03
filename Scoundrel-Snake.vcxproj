@@ -122,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsFactory.cpp" />
+    <ClCompile Include="PlayerControl.cpp" />
     <ClCompile Include="Rat.cpp" />
     <ClCompile Include="Scoundrel Snake.cpp" />
     <ClCompile Include="Snake.cpp" />
@@ -129,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="Board.hpp" />
     <ClInclude Include="GraphicsFactory.hpp" />
+    <ClInclude Include="PlayerControl.hpp" />
     <ClInclude Include="Rat.hpp" />
     <ClInclude Include="Snake.hpp" />
   </ItemGroup>

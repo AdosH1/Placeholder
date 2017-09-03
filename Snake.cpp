@@ -1,6 +1,6 @@
 #include "Snake.hpp"
 
-Snake::Snake(double x, double y, double speed = 4, int tailLength = 6)
+Snake::Snake(double x, double y, double speed, int tailLength)
     {
         Pos.x = x + HeadRadius;
         Pos.y = y + HeadRadius;

@@ -16,6 +16,7 @@
 ////SFML libraries
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
+#include "PlayerControl.hpp"
 //
 //
 //void randvect(sf::Vector2f& vect, const int window_x, const int window_y, const int border_width)
@@ -35,12 +36,39 @@
 //	}
 //
 int main() {
+
+	sf::Vector2<int> windowSize;
+	windowSize.x = 600;
+	windowSize.y = 600;
+	const int border_width = 12;
+	sf::RenderWindow window(sf::VideoMode(windowSize.x, windowSize.y), "Scoundrel Snake");
+	window.setFramerateLimit(30);
+
+	sf::Event event;
+	Snake* snake = new Snake(10, 10);
+	sf::CircleShape circle(8);
+	circle.setFillColor(sf::Color::Green);
+
+	while (window.isOpen())
+	{
+		PlayerControl::playerAction(snake);
+
+		//If the window is crossed, exit the window
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+
+		circle.setPosition(snake->Pos.x, snake->Pos.y);
+
+		window.clear();
+		window.draw(circle);
+		window.display();
+	}
+	return 0;
+}// Main bracket
 //    //Startup variables
-//    const int window_render_x = 600; //keep square, though variables are tied to x co-ord
-//    const int window_render_y = 600;
-//    const int border_width = 12;
-//    sf::RenderWindow window(sf::VideoMode(window_render_x, window_render_y), "Scoundrel Snake");
-//    window.setFramerateLimit(60);
 //
 //    int score = 0;
 //    int hit, count1;
@@ -56,8 +84,6 @@ int main() {
 //    //create board object
 //    Board* board = new Board(window, window_render_x, window_render_y);
 //
-//    //set event for window.close purposes
-//    sf::Event event;
 //
 //    //new snake
 //    Snake snake;
@@ -69,14 +95,7 @@ int main() {
 //    //seed random function
 //    srand(time(NULL));
 //
-//    while (window.isOpen())
-//    {
-//        //If the window is crossed, exit the window
-//        while(window.pollEvent(event))
-//        {
-//        if(event.type == sf::Event::Closed)
-//            window.close();
-//        }
+  // WHILE LOOP FOR GAME BEGIN
 //
 //        //play screen
 //        board->draw_menu(window, score);
@@ -123,75 +142,75 @@ int main() {
 //        }
 //        snake.last_pos.x = snake.pos.x;
 //        snake.last_pos.y = snake.pos.y;
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
-//            {
-//                gameOver = true;
-//            }
-//
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
-//            {
-//                if (python != E)
-//                {
-//                python = W;
-//                snake.shape.setTexture(snake.psnake_head_left);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
-//            {
-//                if (python != W)
-//                {
-//                python = E;
-//                snake.shape.setTexture(snake.psnake_head_right);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) )
-//            {
-//                if (python != S)
-//                {
-//                python = N;
-//                snake.shape.setTexture(snake.psnake_head_up);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) )
-//            {
-//                if (python != N)
-//                {
-//                python = S;
-//                snake.shape.setTexture(snake.psnake_head_down);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::D)  )
-//            {
-//                if (python != SW /*&& python != S && python != W*/)
-//                {
-//                python = NE;
-//                snake.shape.setTexture(snake.psnake_head_ne);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
-//            {
-//                if (python != SE /*&& python != S && python != E*/)
-//                {
-//                python = NW;
-//                snake.shape.setTexture(snake.psnake_head_nw);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-//            {
-//                if (python != NE /*&& python != N && python != E*/)
-//                {
-//                python = SW;
-//                snake.shape.setTexture(snake.psnake_head_sw);
-//                }
-//            }
-//        if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-//            {
-//                if (python != NW /*&& python != N && python != W*/)
-//                {
-//                python = SE;
-//                snake.shape.setTexture(snake.psnake_head_se);
-//                }
-//            }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) )
+        //    {
+        //        gameOver = true;
+        //    }
+
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+        //    {
+        //        if (python != E)
+        //        {
+        //        python = W;
+        //        snake.shape.setTexture(snake.psnake_head_left);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::D) )
+        //    {
+        //        if (python != W)
+        //        {
+        //        python = E;
+        //        snake.shape.setTexture(snake.psnake_head_right);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) )
+        //    {
+        //        if (python != S)
+        //        {
+        //        python = N;
+        //        snake.shape.setTexture(snake.psnake_head_up);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) )
+        //    {
+        //        if (python != N)
+        //        {
+        //        python = S;
+        //        snake.shape.setTexture(snake.psnake_head_down);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::D)  )
+        //    {
+        //        if (python != SW /*&& python != S && python != W*/)
+        //        {
+        //        python = NE;
+        //        snake.shape.setTexture(snake.psnake_head_ne);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::W) && sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+        //    {
+        //        if (python != SE /*&& python != S && python != E*/)
+        //        {
+        //        python = NW;
+        //        snake.shape.setTexture(snake.psnake_head_nw);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        //    {
+        //        if (python != NE /*&& python != N && python != E*/)
+        //        {
+        //        python = SW;
+        //        snake.shape.setTexture(snake.psnake_head_sw);
+        //        }
+        //    }
+        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        //    {
+        //        if (python != NW /*&& python != N && python != W*/)
+        //        {
+        //        python = SE;
+        //        snake.shape.setTexture(snake.psnake_head_se);
+        //        }
+        //    }
 //        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) )
 //            {
 //                score++;
@@ -346,5 +365,3 @@ int main() {
 //        }//gameOver loop
 //    window.display();
 //    } //while window open bracket
-    return 0;
-}//int main() bracket
