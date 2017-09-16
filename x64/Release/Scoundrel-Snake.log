@@ -1,27 +1,29 @@
 ﻿  GameDirector.cpp
-D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\list(1640): error C2678: binary '==': no operator found which takes a left-hand operand of type 'IDrawable' (or there is no acceptable conversion)
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\system_error(386): note: could be 'bool std::operator ==(const std::error_condition &,const std::error_condition &) noexcept'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\system_error(378): note: or       'bool std::operator ==(const std::error_condition &,const std::error_code &) noexcept'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\system_error(370): note: or       'bool std::operator ==(const std::error_code &,const std::error_condition &) noexcept'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\system_error(362): note: or       'bool std::operator ==(const std::error_code &,const std::error_code &) noexcept'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\exception(346): note: or       'bool std::operator ==(const std::exception_ptr &,std::nullptr_t) throw()'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\exception(341): note: or       'bool std::operator ==(std::nullptr_t,const std::exception_ptr &) throw()'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\exception(336): note: or       'bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) throw()'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\list(1640): note: while trying to match the argument list '(IDrawable, const IDrawable)'
-  D:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\list(1636): note: while compiling class template member function 'void std::list<IDrawable,std::allocator<_Ty>>::remove(const _Ty &)'
-          with
-          [
-              _Ty=IDrawable
-          ]
-  GameDirector.cpp(53): note: see reference to function template instantiation 'void std::list<IDrawable,std::allocator<_Ty>>::remove(const _Ty &)' being compiled
-          with
-          [
-              _Ty=IDrawable
-          ]
-  GameDirector.cpp(9): note: see reference to class template instantiation 'std::list<IDrawable,std::allocator<_Ty>>' being compiled
-          with
-          [
-              _Ty=IDrawable
-          ]
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+  GraphicsFactory.cpp
+GraphicsFactory.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+GraphicsFactory.cpp(7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  PlayerControl.cpp
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
+  Rat.cpp
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+Rat.cpp(54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Rat.cpp(63): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Rat.cpp(76): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Scoundrel Snake.cpp
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
 Scoundrel Snake.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Snake.cpp
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
+Snake.cpp(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  All 403 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Scoundrel-Snake.vcxproj -> C:\Users\adenh\documents\visual studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe

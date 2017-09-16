@@ -4,14 +4,14 @@ GameDirector::GameDirector()
 
 }
 
-void GameDirector::AddDrawObject(IDrawable object)
+void GameDirector::AddDrawObject(IDrawable *object)
 {
-	currentDrawObjects.push_back(object);
+	currentDrawObjects.push_back(*object);
 }
 
-void GameDirector::AddGameObject(IGameObject object)
+void GameDirector::AddGameObject(IGameObject *object)
 {
-	currentGameObjects.push_back(object);
+	currentGameObjects.push_back(*object);
 }
 
 Rat GameDirector::CreateRat(double x, double y)
@@ -42,24 +42,24 @@ void GameDirector::DrawGameObjects()
 	}
 }
 
-void GameDirector::RemoveGameObject(IGameObject object)
+void GameDirector::RemoveGameObject(IGameObject *object)
 {
-	currentGameObjects.remove(object);
-	object.Dispose();
+	currentGameObjects.remove(*object);
+	object->Dispose();
 }
 
-void GameDirector::RemoveDrawObject(IDrawable object)
+void GameDirector::RemoveDrawObject(IDrawable *object)
 {
-	currentDrawObjects.remove(object);
+	currentDrawObjects.remove(*object);
 }
 
 void GameDirector::Reset()
 {
 	for (IGameObject object : currentGameObjects)
 	{
-		currentGameObjects.remove(object);
 		object.Dispose();
 	}
+	currentGameObjects.clear();
 	currentDrawObjects.clear();
 }
 

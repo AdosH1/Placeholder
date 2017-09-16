@@ -57,7 +57,7 @@ int main() {
 
 	while (window.isOpen())
 	{
-		PlayerControl::playerAction(s);
+		PlayerControl::playerAction(&s);
 
 		//If the window is crossed, exit the window
 		while (window.pollEvent(event))

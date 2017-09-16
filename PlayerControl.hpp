@@ -28,9 +28,9 @@ class PlayerControl
 		///Gets player input - if none, returns previous input.
 		static Input getPlayerInput(Input &prevInput);
 
-		static void processInput(Input input, Snake snake);
+		static void processInput(Input input, Snake *snake);
 
-		static void playerAction(Snake snake);
+		static void playerAction(Snake *snake);
 
 };
 
