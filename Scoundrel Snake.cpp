@@ -11,12 +11,15 @@
 //#include "Creature.hpp"
 //#include "Board.hpp"
 #include "Snake.hpp"
-#include "Rat.hpp"
+#include "GameDirector.hpp"
 #include "GraphicsFactory.hpp"
+#include "PlayerControl.hpp"
+#include "Rat.hpp"
 ////SFML libraries
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
-#include "PlayerControl.hpp"
+
+
 //
 //
 //void randvect(sf::Vector2f& vect, const int window_x, const int window_y, const int border_width)
@@ -45,13 +48,16 @@ int main() {
 	window.setFramerateLimit(30);
 
 	sf::Event event;
-	Snake* snake = new Snake(10, 10);
+	GameDirector *Game = new GameDirector();
+
+	//Snake* snake = new Snake(10, 10);
+	Snake s = Game->CreateSnake(10, 10);
 	sf::CircleShape circle(8);
 	circle.setFillColor(sf::Color::Green);
 
 	while (window.isOpen())
 	{
-		PlayerControl::playerAction(snake);
+		PlayerControl::playerAction(s);
 
 		//If the window is crossed, exit the window
 		while (window.pollEvent(event))
@@ -60,7 +66,7 @@ int main() {
 				window.close();
 		}
 
-		circle.setPosition(snake->Pos.x, snake->Pos.y);
+		circle.setPosition(s.Pos.x, s.Pos.y);
 
 		window.clear();
 		window.draw(circle);

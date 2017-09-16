@@ -7,6 +7,7 @@
 #include <sstream>
 #include "SFML/Graphics.hpp"
 
+// deprecated class
 class Board
 {
 public:

@@ -1,29 +1,51 @@
 #include "Rat.hpp"
 
-Rat::Rat(double x, double y, double speed = 3){
-        Pos.x = x;
-        Pos.y = y;
-        Speed = speed;
-    }
+Rat::Rat(double x, double y)
+{
+	Pos.x = x;
+	Pos.y = y;
+	Speed = 3;
+}
+
+Rat::Rat(double x, double y, double speed)
+{
+    Pos.x = x;
+    Pos.y = y;
+    Speed = speed;
+}
 
 void Rat::ChooseDirection() {
         dir = rand() % 5;
     }
 
-void Rat::Move() {
-        switch(dir) {
-            case 0: //STOP
-                break;
-            case 1: //UP
-                Pos.y -= Speed;
-            case 2: //LEFT
-                Pos.x -= Speed;
-            case 3: //DOWN
-                Pos.y += Speed;
-            case 4: //RIGHT
-                Pos.x += Speed;
-        } //switch bracket
-    }
+void Rat::Move() 
+{
+    switch(dir) {
+        case 0: //STOP
+            break;
+        case 1: //UP
+            Pos.y -= Speed;
+        case 2: //LEFT
+            Pos.x -= Speed;
+        case 3: //DOWN
+            Pos.y += Speed;
+        case 4: //RIGHT
+            Pos.x += Speed;
+		default:
+			break;
+    } //switch bracket
+}
+
+void Rat::Dispose()
+{
+	delete this;
+}
+
+
+void Rat::Draw()
+{
+	throw new std::string("Method not implemented.");
+}
 
 int Rat::checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r)
 {

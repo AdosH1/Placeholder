@@ -6,25 +6,31 @@
 #include <vector>
 #include <cmath>
 #include "SFML/Graphics.hpp"
+#include "IDrawable.hpp"
+#include "IGameObject.hpp"
 
-class Snake
+class Snake : public IDrawable, public IGameObject
 {
     public:
-        sf::Vector2f Pos;
+        sf::Vector2<double> Pos;
         double Speed;
         int TailLength;
-		Snake(double x, double y, double speed = 4, int tailLength = 6);
+		Snake(double x, double y);
+		Snake(double x, double y, double speed, int tailLength);
+		~Snake() {};
 
-    private:
-        std::deque<sf::Vector2f> TailPos;
-        const double HeadRadius = 8;
-        const double TailRadius = 8;
-        sf::Vector2f LastPos;
-
-	public: 
-		void UpdateTail();
+		void Dispose() override;
+		void Draw() override;
 		void Lengthen(int length);
 		bool TailHitByHead();
+		void UpdateTail();
+
+    private:
+        std::deque<sf::Vector2<double>> TailPos;
+        const double HeadRadius = 8;
+        const double TailRadius = 8;
+        sf::Vector2<double> LastPos;
+
 
 };
 

@@ -65,7 +65,7 @@ class GraphicsFactory
     void LoadMenu();
     void LoadBoard();
     void LoadSnake();
-    void LoadRate();
+    void LoadRat();
 };
 
 #endif // _GRAPHICSFACTORY_HPP_

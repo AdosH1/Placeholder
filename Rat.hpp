@@ -6,11 +6,22 @@
 #include <vector>
 #include <cmath>
 #include "SFML/Graphics.hpp"
+#include "IGameObject.hpp"
+#include "IDrawable.hpp"
 
-class Rat{
+class Rat : public IGameObject, public IDrawable
+{
     public:
-        sf::Vector2f Pos;
+		Rat(double x, double y);
+		Rat(double x, double y, double speed);
+		~Rat() {};
+
+        sf::Vector2<double> Pos;
         double Speed;
+		
+		void Dispose() override;
+		void Draw() override;
+		
 
         // deprecated variables
         int hit;
@@ -23,14 +34,13 @@ class Rat{
         double step; // take x steps? will probably need this variable
         int dir;
 
-    Rat(double x, double y, double speed);
-    void ChooseDirection();
-    void Move();
+		void ChooseDirection();
+		void Move();
 
-    // deprecated functions - please rewrite
-    int checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r);
-    void draw(sf::RenderWindow& window, sf::CircleShape& shape);
-    void rmove();
+		// deprecated functions - please rewrite
+		int checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r);
+		void draw(sf::RenderWindow& window, sf::CircleShape& shape);
+		void rmove();
 };
 
 #endif
