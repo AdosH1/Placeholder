@@ -1,5 +1,4 @@
-#ifndef _RAT_HPP_
-#define _RAT_HPP_
+#pragma once
 
 #include <iostream>
 #include <deque>
@@ -9,18 +8,20 @@
 #include "IGameObject.hpp"
 #include "IDrawable.hpp"
 
-class Rat : public IGameObject, public IDrawable
+class Rat : public IGameObject, public IDrawable, public IObject
 {
     public:
-		Rat(double x, double y);
-		Rat(double x, double y, double speed);
+		Rat(sf::RenderWindow *renderWindow, double x, double y);
+		Rat(sf::RenderWindow *renderWindow, double x, double y, double speed);
 		~Rat() {};
 
+		sf::RenderWindow *Window;
         sf::Vector2<double> Pos;
-        double Speed;
+		sf::CircleShape Head;
+		double Speed;
 		
-		void Dispose() override;
 		void Draw() override;
+		void PlayTurn();
 		
 
         // deprecated variables
@@ -39,8 +40,5 @@ class Rat : public IGameObject, public IDrawable
 
 		// deprecated functions - please rewrite
 		int checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r);
-		void draw(sf::RenderWindow& window, sf::CircleShape& shape);
 		void rmove();
 };
-
-#endif

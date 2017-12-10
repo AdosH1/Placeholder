@@ -1,3 +1,5 @@
+#pragma once
+
 #include "PlayerControl.hpp"
 
 PlayerControl::Input PlayerControl::currInput = noAction;
@@ -8,14 +10,14 @@ PlayerControl::PlayerControl()
 
 }
 
-void PlayerControl::playerAction(Snake *snake)
+void PlayerControl::PlayerAction(Snake *snake)
 {
 	prevInput = currInput;
 	currInput = getPlayerInput(prevInput);
 	processInput(currInput, snake);
 }
 
-
+// We parse in prevInput in the case that no button is pressed, it will return the last known input
 PlayerControl::Input PlayerControl::getPlayerInput(Input &prevInput)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -44,10 +46,7 @@ PlayerControl::Input PlayerControl::getPlayerInput(Input &prevInput)
 		return prevInput = moveE;
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		prevInput = moveS;
-		return prevInput;
-	}
+		return prevInput = moveS;
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		return prevInput = moveW;

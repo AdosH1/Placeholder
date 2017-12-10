@@ -1,5 +1,4 @@
-#ifndef _PLAYERCONTROL_HPP_
-#define _PLAYER CONTROL_HPP_
+#pragma once
 #include "Snake.hpp"
 
 /* FYI, you can't make static classes unless its managed C++ :( */
@@ -30,8 +29,7 @@ class PlayerControl
 
 		static void processInput(Input input, Snake *snake);
 
-		static void playerAction(Snake *snake);
+		static void PlayerAction(Snake *snake);
 
 };
 
-#endif

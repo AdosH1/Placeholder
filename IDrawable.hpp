@@ -1,6 +1,7 @@
 #pragma once
+#include "IObject.hpp"
 
-class IDrawable
+class IDrawable : public IObject
 {
 	/* This interface is meant to be inherited by objects that are able to be drawn.
 	 * The GameDirector will hold a list of drawables that will be queued to draw per frame. */

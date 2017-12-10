@@ -1,4 +1,5 @@
-﻿#include "GameDirector.hpp"
+﻿#pragma once
+#include "GameDirector.hpp"
 GameDirector::GameDirector()
 {
 
@@ -6,58 +7,73 @@ GameDirector::GameDirector()
 
 void GameDirector::AddDrawObject(IDrawable *object)
 {
-	currentDrawObjects.push_back(*object);
+	currentDrawObjects.push_back(object);
 }
 
 void GameDirector::AddGameObject(IGameObject *object)
 {
-	currentGameObjects.push_back(*object);
+	currentGameObjects.push_back(object);
 }
-
-Rat GameDirector::CreateRat(double x, double y)
-{
-	Rat *r = new Rat(x, y);
-	currentGameObjects.push_back(*r);
-	currentDrawObjects.push_back(*r);
-
-	return *r;
-}
-
-Snake GameDirector::CreateSnake(double x, double y)
-{
-	Snake *s = new Snake(x, y);
-	currentGameObjects.push_back(*s);
-	currentDrawObjects.push_back(*s);
-
-	return *s;
-}
-
-
 
 void GameDirector::DrawGameObjects()
 {
-	for (IDrawable object : currentDrawObjects)
+	for (IDrawable *object : currentDrawObjects)
 	{
-		object.Draw();
+		if (Snake *snake = dynamic_cast<Snake*>(object)) snake->Draw();
+		if (Rat *rat = dynamic_cast<Rat*>(object)) rat->Draw();
 	}
+}
+
+void GameDirector::GameTurn()
+{
+	for (IGameObject *object : currentGameObjects)
+	{
+		if (Rat *rat = dynamic_cast<Rat*>(object)) rat->PlayTurn();
+	}
+}
+
+Rat* GameDirector::CreateRat(sf::RenderWindow *renderWindow, double x, double y)
+{
+	Rat *r = new Rat(renderWindow, x, y);
+	currentGameObjects.push_back(r);
+	currentDrawObjects.push_back(r);
+
+	return r;
+}
+
+Snake* GameDirector::CreateSnake(sf::RenderWindow *renderWindow, double x, double y)
+{
+	Snake *s = new Snake(renderWindow, x, y);
+	currentGameObjects.push_back(s);
+	currentDrawObjects.push_back(s);
+
+	return s;
+}
+
+void GameDirector::Remove(IObject *object)
+{
+	if (IGameObject *obj = dynamic_cast<IGameObject*>(object)) currentGameObjects.remove(obj);
+	if (IDrawable *obj = dynamic_cast<IDrawable*>(object)) currentDrawObjects.remove(obj);
+
+	delete object;
+	object = NULL;
 }
 
 void GameDirector::RemoveGameObject(IGameObject *object)
 {
-	currentGameObjects.remove(*object);
-	object->Dispose();
+	currentGameObjects.remove(object);
 }
 
 void GameDirector::RemoveDrawObject(IDrawable *object)
 {
-	currentDrawObjects.remove(*object);
+	currentDrawObjects.remove(object);
 }
 
 void GameDirector::Reset()
 {
-	for (IGameObject object : currentGameObjects)
+	for (IGameObject *object : currentGameObjects)
 	{
-		object.Dispose();
+		object->Dispose();
 	}
 	currentGameObjects.clear();
 	currentDrawObjects.clear();

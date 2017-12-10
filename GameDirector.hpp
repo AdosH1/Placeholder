@@ -9,19 +9,21 @@
 class GameDirector
 {
 public:
-	std::list<IGameObject> currentGameObjects;
-	std::list<IDrawable> currentDrawObjects;
+	std::list<IGameObject*> currentGameObjects;
+	std::list<IDrawable*> currentDrawObjects;
 
 	GameDirector();
 
 	void AddGameObject(IGameObject *object);
 	void AddDrawObject(IDrawable *object);
-
-	Rat CreateRat(double x, double y);
-	Snake CreateSnake(double x, double y);
 	void DrawGameObjects();
+	void GameTurn();
+
+	Rat* CreateRat(sf::RenderWindow *renderWindow, double x, double y);
+	Snake* CreateSnake(sf::RenderWindow *renderWindow, double x, double y);
 
 	void Reset();
+	void Remove(IObject *object);
 	void RemoveGameObject(IGameObject *object);
 	void RemoveDrawObject(IDrawable *object);
 

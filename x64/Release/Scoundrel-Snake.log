@@ -1,29 +1,71 @@
 ﻿  GameDirector.cpp
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Snake.hpp(12): warning C4584: 'Snake': base-class 'IObject' is already a base-class of 'IDrawable'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(4): note: see declaration of 'IDrawable'
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Rat.hpp(12): warning C4584: 'Rat': base-class 'IObject' is already a base-class of 'IGameObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(4): note: see declaration of 'IGameObject'
   GraphicsFactory.cpp
 GraphicsFactory.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 GraphicsFactory.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 GraphicsFactory.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 GraphicsFactory.cpp(7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   PlayerControl.cpp
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Snake.hpp(12): warning C4584: 'Snake': base-class 'IObject' is already a base-class of 'IDrawable'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(4): note: see declaration of 'IDrawable'
+PlayerControl.cpp(63): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(66): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(69): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(72): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(76): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(77): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(82): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(83): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(88): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(89): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(94): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+PlayerControl.cpp(95): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   Rat.cpp
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
-Rat.cpp(54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-Rat.cpp(63): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-Rat.cpp(76): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Rat.hpp(12): warning C4584: 'Rat': base-class 'IObject' is already a base-class of 'IGameObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(4): note: see declaration of 'IGameObject'
+Rat.cpp(13): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+Rat.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(27): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+Rat.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Rat.cpp(78): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Rat.cpp(87): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Scoundrel Snake.cpp
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
-Scoundrel Snake.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Snake.hpp(12): warning C4584: 'Snake': base-class 'IObject' is already a base-class of 'IDrawable'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(4): note: see declaration of 'IDrawable'
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Rat.hpp(12): warning C4584: 'Rat': base-class 'IObject' is already a base-class of 'IGameObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(4): note: see declaration of 'IGameObject'
+Scoundrel Snake.cpp(34): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Snake.cpp
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(14): warning C4101: 'e': unreferenced local variable
-c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(14): warning C4101: 'e': unreferenced local variable
-Snake.cpp(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IGameObject.hpp(15): warning C4101: 'e': unreferenced local variable
+c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\Snake.hpp(12): warning C4584: 'Snake': base-class 'IObject' is already a base-class of 'IDrawable'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IObject.hpp(4): note: see declaration of 'IObject'
+  c:\users\adenh\documents\visual studio 2017\projects\scoundrel-snake\scoundrel-snake\IDrawable.hpp(4): note: see declaration of 'IDrawable'
+Snake.cpp(9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Snake.cpp(10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Snake.cpp(22): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+Snake.cpp(31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Snake.cpp(32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+Snake.cpp(45): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
   Generating code
-  All 403 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 368 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Scoundrel-Snake.vcxproj -> C:\Users\adenh\documents\visual studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe
+  Scoundrel-Snake.vcxproj -> C:\Users\adenh\Documents\Visual Studio 2017\Projects\Scoundrel-Snake\x64\Release\Scoundrel-Snake.exe

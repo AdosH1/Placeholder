@@ -1,6 +1,7 @@
 #pragma once
+#include "IObject.hpp"
 
-class IGameObject
+class IGameObject : public IObject
 {
 	/* A game object is an object that is tangible within the game.
 	 * The GameDirector will keep track of all game objects in play. */

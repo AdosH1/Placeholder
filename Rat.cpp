@@ -1,50 +1,74 @@
+#pragma once
 #include "Rat.hpp"
 
-Rat::Rat(double x, double y)
+Rat::Rat(sf::RenderWindow *renderWindow, double x, double y)
 {
+	Window = renderWindow;
+
 	Pos.x = x;
 	Pos.y = y;
 	Speed = 3;
+
+	/* Initialise Graphics */
+	Head = sf::CircleShape(HeadRadius);
+	Head.setFillColor(sf::Color::White);
+	Head.setPosition(Pos.x, Pos.y);
 }
 
-Rat::Rat(double x, double y, double speed)
+Rat::Rat(sf::RenderWindow *renderWindow, double x, double y, double speed)
 {
+	Window = renderWindow;
+
     Pos.x = x;
     Pos.y = y;
     Speed = speed;
+
+	/* Initialise Graphics */
+	Head = sf::CircleShape(HeadRadius);
+	Head.setFillColor(sf::Color::White);
+	Head.setPosition(Pos.x, Pos.y);
 }
 
-void Rat::ChooseDirection() {
-        dir = rand() % 5;
-    }
+void Rat::ChooseDirection() 
+{
+    dir = rand() % 5;
+	step = rand() % 10 + 1;
+}
 
 void Rat::Move() 
 {
-    switch(dir) {
+    switch(dir) 
+	{
         case 0: //STOP
             break;
         case 1: //UP
             Pos.y -= Speed;
+			break;
         case 2: //LEFT
             Pos.x -= Speed;
+			break;
         case 3: //DOWN
             Pos.y += Speed;
+			break;
         case 4: //RIGHT
             Pos.x += Speed;
+			break;
 		default:
 			break;
-    } //switch bracket
+    } 
+	step--;
 }
 
-void Rat::Dispose()
+void Rat::PlayTurn()
 {
-	delete this;
+	if (step <= 0) ChooseDirection();
+	Move();
 }
-
 
 void Rat::Draw()
 {
-	throw new std::string("Method not implemented.");
+	Head.setPosition(Pos.x, Pos.y);
+	Window->draw(Head);
 }
 
 int Rat::checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r)
@@ -69,52 +93,6 @@ int Rat::checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::d
     }
     if(hit == false)
         return 0;
-}
-
-void Rat::draw(sf::RenderWindow& window, sf::CircleShape& shape)
-{
-    shape.setPosition(Pos.x - HeadRadius, Pos.y - HeadRadius);
-    window.draw(shape);
-}
-
-void Rat::rmove()
-{
-    count1++;
-    if (count1 >= delay)
-    {
-    dir = rand() % 5;
-    delay = rand() % 60 + 10;
-    count1 = 0;
-    }
-
-        switch(dir)
-        {
-            case 0: //STOP
-                break;
-            case 1: //UP
-                if ((Pos.y - HeadRadius) >= 12)
-                {
-                    Pos.y -= Speed;
-                }
-                break;
-            case 2: //LEFT
-                if ((Pos.x - HeadRadius) >= 12)
-                {
-                    Pos.x -= Speed;
-                }
-                break;
-            case 3: //DOWN
-                if ((Pos.y + HeadRadius) <= 588)
-                {
-                    Pos.y += Speed;
-                }
-                break;
-            case 4: //RIGHT
-                if ((Pos.x + HeadRadius) <= 588)
-                {
-                    Pos.x += Speed;
-                }
-        } //switch bracket
 }
 
 

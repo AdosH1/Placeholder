@@ -1,5 +1,4 @@
-#ifndef _SNAKE_HPP_
-#define _SNAKE_HPP_
+#pragma once
 
 #include <iostream>
 #include <deque>
@@ -9,24 +8,29 @@
 #include "IDrawable.hpp"
 #include "IGameObject.hpp"
 
-class Snake : public IDrawable, public IGameObject
+class Snake : public IDrawable, public IGameObject, public IObject
 {
     public:
-        sf::Vector2<double> Pos;
+		/* The window this object belongs to */
+		sf::RenderWindow *Window;
+
+        sf::Vector2<float> Pos;
+		std::deque<sf::Vector2<float>> TailPos;
         double Speed;
         int TailLength;
-		Snake(double x, double y);
-		Snake(double x, double y, double speed, int tailLength);
+
+		sf::CircleShape Head;
+
+		Snake(sf::RenderWindow *renderWindow, double x, double y);
+		Snake(sf::RenderWindow *renderWindow, double x, double y, double speed, int tailLength);
 		~Snake() {};
 
-		void Dispose() override;
 		void Draw() override;
 		void Lengthen(int length);
 		bool TailHitByHead();
 		void UpdateTail();
 
     private:
-        std::deque<sf::Vector2<double>> TailPos;
         const double HeadRadius = 8;
         const double TailRadius = 8;
         sf::Vector2<double> LastPos;
@@ -34,5 +38,4 @@ class Snake : public IDrawable, public IGameObject
 
 };
 
-#endif
 

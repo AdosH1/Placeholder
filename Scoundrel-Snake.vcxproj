@@ -134,6 +134,7 @@
     <ClInclude Include="GraphicsFactory.hpp" />
     <ClInclude Include="IDrawable.hpp" />
     <ClInclude Include="IGameObject.hpp" />
+    <ClInclude Include="IObject.hpp" />
     <ClInclude Include="PlayerControl.hpp" />
     <ClInclude Include="Rat.hpp" />
     <ClInclude Include="Snake.hpp" />

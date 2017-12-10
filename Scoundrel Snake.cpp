@@ -2,6 +2,7 @@
 //// By Aden Huen
 //
 //
+#pragma once
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -13,12 +14,50 @@
 #include "Snake.hpp"
 #include "GameDirector.hpp"
 #include "GraphicsFactory.hpp"
-#include "PlayerControl.hpp"
 #include "Rat.hpp"
 ////SFML libraries
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
+#include "PlayerControl.hpp"
 
+
+int main() 
+{
+	/* Initialization */
+	sf::Vector2<int> windowSize;
+	windowSize.x = 600;
+	windowSize.y = 600;
+	const int border_width = 12;
+	sf::RenderWindow Window(sf::VideoMode(windowSize.x, windowSize.y), "Scoundrel Snake");
+	Window.setFramerateLimit(30);
+
+	srand(time(NULL));
+	sf::Event event;
+
+	/* Game objects */
+	GameDirector *Game = new GameDirector();
+	Snake *s = Game->CreateSnake(&Window, 10, 10);
+	Rat *r = Game->CreateRat(&Window, 300, 300);
+
+	while (Window.isOpen())
+	{
+		if (s != NULL) PlayerControl::PlayerAction(s);
+		Game->GameTurn();
+
+		//Draw game objects
+		Window.clear();
+		Game->DrawGameObjects();
+		Window.display();
+
+		//If the window is crossed, exit the window
+		while (Window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				Window.close();
+		}
+	}
+	return 0;
+}
 
 //
 //
@@ -38,42 +77,8 @@
 //		return false;
 //	}
 //
-int main() {
 
-	sf::Vector2<int> windowSize;
-	windowSize.x = 600;
-	windowSize.y = 600;
-	const int border_width = 12;
-	sf::RenderWindow window(sf::VideoMode(windowSize.x, windowSize.y), "Scoundrel Snake");
-	window.setFramerateLimit(30);
-
-	sf::Event event;
-	GameDirector *Game = new GameDirector();
-
-	//Snake* snake = new Snake(10, 10);
-	Snake s = Game->CreateSnake(10, 10);
-	sf::CircleShape circle(8);
-	circle.setFillColor(sf::Color::Green);
-
-	while (window.isOpen())
-	{
-		PlayerControl::playerAction(&s);
-
-		//If the window is crossed, exit the window
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		circle.setPosition(s.Pos.x, s.Pos.y);
-
-		window.clear();
-		window.draw(circle);
-		window.display();
-	}
-	return 0;
-}// Main bracket
+// Main bracket
 //    //Startup variables
 //
 //    int score = 0;
