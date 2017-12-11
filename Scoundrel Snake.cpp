@@ -8,14 +8,11 @@
 #include <deque>
 #include <string>
 #include <sstream>
-////My created class for creatures
-//#include "Creature.hpp"
-//#include "Board.hpp"
+
 #include "Snake.hpp"
 #include "GameDirector.hpp"
 #include "GraphicsFactory.hpp"
 #include "Rat.hpp"
-////SFML libraries
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 #include "PlayerControl.hpp"
@@ -36,6 +33,9 @@ int main()
 
 	/* Game objects */
 	GameDirector *Game = new GameDirector();
+	GraphicsFactory *Graphics = new GraphicsFactory(windowSize.x, windowSize.y, border_width);
+	Graphics->Initialise();
+
 	Snake *s = Game->CreateSnake(&Window, 10, 10);
 	Rat *r = Game->CreateRat(&Window, 300, 300);
 
@@ -158,7 +158,7 @@ int main()
         //        gameOver = true;
         //    }
 
-        //if ( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
+//if ( sf::Keyboard::isKeyPressed(sf::Keyboard::A) )
         //    {
         //        if (python != E)
         //        {

@@ -7,6 +7,7 @@
 #include "SFML/Graphics.hpp"
 #include "IDrawable.hpp"
 #include "IGameObject.hpp"
+#include "GraphicsFactory.hpp"
 
 class Snake : public IDrawable, public IGameObject, public IObject
 {

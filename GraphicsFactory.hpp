@@ -57,11 +57,20 @@ class GraphicsFactory
     sf::Texture SnakeBody;
     sf::Texture *pSnakeBody;
 
-
     // Rat
     sf::CircleShape RatHead;
 
+	sf::Texture RatHeadN;
+	sf::Texture *pRatHeadN;
+	sf::Texture RatHeadE;
+	sf::Texture *pRatHeadE;
+	sf::Texture RatHeadS;
+	sf::Texture *pRatHeadS;
+	sf::Texture RatHeadW;
+	sf::Texture *pRatHeadW;
+
     GraphicsFactory(int WindowX, int WindowY, int borderWidth);
+	void Initialise();
     void LoadMenu();
     void LoadBoard();
     void LoadSnake();

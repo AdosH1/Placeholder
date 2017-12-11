@@ -1,13 +1,15 @@
 #include "GraphicsFactory.hpp"
 
-GraphicsFactory::GraphicsFactory(int WindowX, int WindowY, int borderWidth = 12){
-        WindowSize.x = WindowX;
-        WindowSize.y = WindowY;
-        BorderSize.x = WindowX;
-        BorderSize.y = borderWidth;
-    }
+GraphicsFactory::GraphicsFactory(int WindowX, int WindowY, int borderWidth = 12)
+{
+    WindowSize.x = WindowX;
+    WindowSize.y = WindowY;
+    BorderSize.x = WindowX;
+    BorderSize.y = borderWidth;
+}
 
-void GraphicsFactory::LoadMenu() {
+void GraphicsFactory::LoadMenu() 
+{
         if (!MenuTexture.loadFromFile("Resources/Graphics/Scoundrel_menu.png"))
             std::cout << "Error loading menu texture." << std::endl;
         MenuSprite.setTexture(MenuTexture);
@@ -26,10 +28,10 @@ void GraphicsFactory::LoadMenu() {
             std::cout << "Error loading selector texture." << std::endl;
         SelectorSprite.setTexture(SelectorTexture);
         SelectorSprite.setPosition(60,332);
-    }
+}
 
 void GraphicsFactory::LoadBoard()
-    {
+{
     //Border Texture
     if (!BorderTexture.loadFromFile("Resources/Graphics/wood_border.png"))
         std::cout << "Error loading border texture." << std::endl;
@@ -59,4 +61,72 @@ void GraphicsFactory::LoadBoard()
     BorderRight.setTexture(pBorderTexture);
     BorderRight.setPosition(WindowSize.x,0);
     BorderRight.rotate(90);
-    }
+}
+
+void GraphicsFactory::LoadSnake()
+{
+	if (!SnakeHeadN.loadFromFile("Resources/Graphics/SnakeHeadN.png"))
+		std::cout << "Error loading SnakeHeadN texture." << std::endl;
+	pSnakeHeadN = &SnakeHeadN;
+
+	if (!SnakeHeadE.loadFromFile("Resources/Graphics/SnakeHeadE.png"))
+		std::cout << "Error loading SnakeHeadE texture." << std::endl;
+	pSnakeHeadE = &SnakeHeadE;
+
+	if (!SnakeHeadS.loadFromFile("Resources/Graphics/SnakeHeadS.png"))
+		std::cout << "Error loading SnakeHeadS texture." << std::endl;
+	pSnakeHeadS = &SnakeHeadS;
+
+	if (!SnakeHeadW.loadFromFile("Resources/Graphics/SnakeHeadW.png"))
+		std::cout << "Error loading SnakeHeadW texture." << std::endl;
+	pSnakeHeadW = &SnakeHeadW;
+
+	if (!SnakeHeadNE.loadFromFile("Resources/Graphics/SnakeHeadNE.png"))
+		std::cout << "Error loading SnakeHeadNE texture." << std::endl;
+	pSnakeHeadNE = &SnakeHeadNE;
+
+	if (!SnakeHeadNW.loadFromFile("Resources/Graphics/SnakeHeadNW.png"))
+		std::cout << "Error loading SnakeHeadNW texture." << std::endl;
+	pSnakeHeadNW = &SnakeHeadNW;
+
+	if (!SnakeHeadSE.loadFromFile("Resources/Graphics/SnakeHeadSE.png"))
+		std::cout << "Error loading SnakeHeadSE texture." << std::endl;
+	pSnakeHeadSE = &SnakeHeadSE;
+
+	if (!SnakeHeadSW.loadFromFile("Resources/Graphics/SnakeHeadSW.png"))
+		std::cout << "Error loading SnakeHeadSW texture." << std::endl;
+	pSnakeHeadSW = &SnakeHeadSW;
+
+	if (!SnakeBody.loadFromFile("Resources/Graphics/SnakeBody.png"))
+		std::cout << "Error loading SnakeBody texture." << std::endl;
+	pSnakeBody = &SnakeBody;
+}
+
+void GraphicsFactory::LoadRat()
+{
+	if (!RatHeadN.loadFromFile("Resources/Graphics/RatHeadN.png"))
+		std::cout << "Error loading RatHeadN texture." << std::endl;
+	pRatHeadN = &RatHeadN;
+
+	if (!RatHeadE.loadFromFile("Resources/Graphics/RatHeadE.png"))
+		std::cout << "Error loading RatHeadE texture." << std::endl;
+	pRatHeadE = &RatHeadE;
+
+	if (!RatHeadS.loadFromFile("Resources/Graphics/RatHeadS.png"))
+		std::cout << "Error loading RatHeadS texture." << std::endl;
+	pRatHeadS = &RatHeadS;
+
+	if (!RatHeadW.loadFromFile("Resources/Graphics/RatHeadW.png"))
+		std::cout << "Error loading RatHeadW texture." << std::endl;
+	pRatHeadW = &RatHeadW;
+}
+
+void GraphicsFactory::Initialise()
+{
+	LoadMenu();
+	LoadBoard();
+	LoadSnake();
+	LoadRat();
+}
+
+
