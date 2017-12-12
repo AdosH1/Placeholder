@@ -1,7 +1,8 @@
 #pragma once
 #include "Rat.hpp"
+#include "GraphicsFactory.hpp"
 
-Rat::Rat(sf::RenderWindow *renderWindow, double x, double y)
+Rat::Rat(sf::RenderWindow *renderWindow, float x, float y)
 {
 	Window = renderWindow;
 
@@ -11,11 +12,11 @@ Rat::Rat(sf::RenderWindow *renderWindow, double x, double y)
 
 	/* Initialise Graphics */
 	Head = sf::CircleShape(HeadRadius);
-	Head.setFillColor(sf::Color::White);
+	Head.setTexture(GraphicsFactory::pRatHeadS);
 	Head.setPosition(Pos.x, Pos.y);
 }
 
-Rat::Rat(sf::RenderWindow *renderWindow, double x, double y, double speed)
+Rat::Rat(sf::RenderWindow *renderWindow, float x, float y, float speed)
 {
 	Window = renderWindow;
 
@@ -25,7 +26,7 @@ Rat::Rat(sf::RenderWindow *renderWindow, double x, double y, double speed)
 
 	/* Initialise Graphics */
 	Head = sf::CircleShape(HeadRadius);
-	Head.setFillColor(sf::Color::White);
+	Head.setTexture(GraphicsFactory::pRatHeadS);
 	Head.setPosition(Pos.x, Pos.y);
 }
 
@@ -43,15 +44,19 @@ void Rat::Move()
             break;
         case 1: //UP
             Pos.y -= Speed;
+			Head.setTexture(GraphicsFactory::pRatHeadN);
 			break;
         case 2: //LEFT
             Pos.x -= Speed;
+			Head.setTexture(GraphicsFactory::pRatHeadW);
 			break;
         case 3: //DOWN
             Pos.y += Speed;
+			Head.setTexture(GraphicsFactory::pRatHeadS);
 			break;
         case 4: //RIGHT
             Pos.x += Speed;
+			Head.setTexture(GraphicsFactory::pRatHeadE);
 			break;
 		default:
 			break;
@@ -75,7 +80,7 @@ int Rat::checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::d
 {
     hit = false;
 
-    d = sqrt( pow(s_pos.x - Pos.x, 2) + pow(s_pos.y - Pos.y, 2)); //check relative distance between snake and rat
+    d = (int)sqrt( pow(s_pos.x - Pos.x, 2) + pow(s_pos.y - Pos.y, 2)); //check relative distance between snake and rat
     if (d <= (s_r + HeadRadius))
     {
         hit = true;
@@ -84,7 +89,7 @@ int Rat::checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::d
 
     for (int i = 0; i < x.size(); i++)
     {
-        d = sqrt( pow(x.at(i) - Pos.x, 2) + pow(y.at(i) - Pos.y, 2) ); //check relative distance between tail segment and rat
+        d = (int)sqrt( pow(x.at(i) - Pos.x, 2) + pow(y.at(i) - Pos.y, 2) ); //check relative distance between tail segment and rat
         if (d <= (t_r + HeadRadius))
         {
             hit = true;

@@ -28,7 +28,7 @@ int main()
 	sf::RenderWindow Window(sf::VideoMode(windowSize.x, windowSize.y), "Scoundrel Snake");
 	Window.setFramerateLimit(30);
 
-	srand(time(NULL));
+	srand((unsigned)time(NULL));
 	sf::Event event;
 
 	/* Game objects */

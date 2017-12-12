@@ -11,7 +11,7 @@ class GraphicsFactory
 {
     public:
 
-    sf::Vector2f WindowSize;
+    sf::Vector2<int> WindowSize;
     sf::Vector2f BorderSize;
 
     // Menu Screen
@@ -39,35 +39,35 @@ class GraphicsFactory
     sf::CircleShape SnakeTail;
 
     sf::Texture SnakeHeadN;
-    sf::Texture *pSnakeHeadN;
+    static sf::Texture *pSnakeHeadN;
     sf::Texture SnakeHeadE;
-    sf::Texture *pSnakeHeadE;
+	static sf::Texture *pSnakeHeadE;
     sf::Texture SnakeHeadS;
-    sf::Texture *pSnakeHeadS;
+	static sf::Texture *pSnakeHeadS;
     sf::Texture SnakeHeadW;
-    sf::Texture *pSnakeHeadW;
+	static sf::Texture *pSnakeHeadW;
     sf::Texture SnakeHeadNE;
-    sf::Texture *pSnakeHeadNE;
+	static sf::Texture *pSnakeHeadNE;
     sf::Texture SnakeHeadNW;
-    sf::Texture *pSnakeHeadNW;
+	static sf::Texture *pSnakeHeadNW;
     sf::Texture SnakeHeadSE;
-    sf::Texture *pSnakeHeadSE;
+	static sf::Texture *pSnakeHeadSE;
     sf::Texture SnakeHeadSW;
-    sf::Texture *pSnakeHeadSW;
+	static sf::Texture *pSnakeHeadSW;
     sf::Texture SnakeBody;
-    sf::Texture *pSnakeBody;
+	static sf::Texture *pSnakeBody;
 
     // Rat
     sf::CircleShape RatHead;
 
 	sf::Texture RatHeadN;
-	sf::Texture *pRatHeadN;
+	static sf::Texture *pRatHeadN;
 	sf::Texture RatHeadE;
-	sf::Texture *pRatHeadE;
+	static sf::Texture *pRatHeadE;
 	sf::Texture RatHeadS;
-	sf::Texture *pRatHeadS;
+	static sf::Texture *pRatHeadS;
 	sf::Texture RatHeadW;
-	sf::Texture *pRatHeadW;
+	static sf::Texture *pRatHeadW;
 
     GraphicsFactory(int WindowX, int WindowY, int borderWidth);
 	void Initialise();

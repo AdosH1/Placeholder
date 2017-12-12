@@ -9,31 +9,42 @@
 #include "IGameObject.hpp"
 #include "GraphicsFactory.hpp"
 
-class Snake : public IDrawable, public IGameObject, public IObject
+class Snake : public IDrawable, public IGameObject
 {
     public:
 		/* The window this object belongs to */
 		sf::RenderWindow *Window;
 
+		/* Current head position */
         sf::Vector2<float> Pos;
+		/* A deque of all tail positions */
 		std::deque<sf::Vector2<float>> TailPos;
-        double Speed;
+		/* Snake speed in pixels */
+        float Speed;
+	    /* The number of tail segments the snake will have */
         int TailLength;
 
 		sf::CircleShape Head;
+		sf::CircleShape Tail;
 
-		Snake(sf::RenderWindow *renderWindow, double x, double y);
-		Snake(sf::RenderWindow *renderWindow, double x, double y, double speed, int tailLength);
+		/* Constructors / Destructors */
+		Snake(sf::RenderWindow *renderWindow, float x, float y);
+		Snake(sf::RenderWindow *renderWindow, float x, float y, float speed, int tailLength);
 		~Snake() {};
 
 		void Draw() override;
+		void UpdateHeadTexture(int enumValue);
 		void Lengthen(int length);
 		bool TailHitByHead();
 		void UpdateTail();
 
     private:
-        const double HeadRadius = 8;
-        const double TailRadius = 8;
+        const float HeadRadius = 8;
+        const float TailRadius = 6;
+		/* The distance between each tail segment (in pixels (roughly) ) */
+		const int TailSegmentDistance = 2;
+		int TailSegmentCounter = 0;
+
         sf::Vector2<double> LastPos;
 
 

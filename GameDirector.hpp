@@ -19,8 +19,8 @@ public:
 	void DrawGameObjects();
 	void GameTurn();
 
-	Rat* CreateRat(sf::RenderWindow *renderWindow, double x, double y);
-	Snake* CreateSnake(sf::RenderWindow *renderWindow, double x, double y);
+	Rat* CreateRat(sf::RenderWindow *renderWindow, float x, float y);
+	Snake* CreateSnake(sf::RenderWindow *renderWindow, float x, float y);
 
 	void Reset();
 	void Remove(IObject *object);

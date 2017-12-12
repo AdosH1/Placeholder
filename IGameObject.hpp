@@ -12,7 +12,7 @@ public:
 		{
 			(IGameObject)lhs;
 		}
-		catch (std::exception& e)
+		catch (std::exception&)
 		{
 			return false;
 		}

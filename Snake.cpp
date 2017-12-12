@@ -2,7 +2,7 @@
 
 #include "Snake.hpp"
 
-Snake::Snake(sf::RenderWindow *renderWindow, double x, double y)
+Snake::Snake(sf::RenderWindow *renderWindow, float x, float y)
 {
 	Window = renderWindow;
 
@@ -11,8 +11,9 @@ Snake::Snake(sf::RenderWindow *renderWindow, double x, double y)
 	Speed = 4;
 	TailLength = 6;
 
-	for (int i = 0; i < TailLength; ++i) {
-		TailPos.push_back(sf::Vector2<float>(0, 0));
+	for (int i = 0; i < TailLength; ++i) 
+	{
+		TailPos.push_back(sf::Vector2<float>(-10, -10));
 	}
 
 	LastPos.x = -10;
@@ -20,11 +21,14 @@ Snake::Snake(sf::RenderWindow *renderWindow, double x, double y)
 
 	/* Initialise Graphics */
 	Head = sf::CircleShape(HeadRadius);
-	Head.setFillColor(sf::Color::Green);
+	Head.setTexture(GraphicsFactory::pSnakeHeadS);
 	Head.setPosition(Pos.x, Pos.y);
+
+	Tail = sf::CircleShape(TailRadius);
+	Tail.setTexture(GraphicsFactory::pSnakeBody);
 };
 
-Snake::Snake(sf::RenderWindow *renderWindow, double x, double y, double speed, int tailLength)
+Snake::Snake(sf::RenderWindow *renderWindow, float x, float y, float speed, int tailLength)
 {
 	Window = renderWindow;
 
@@ -43,16 +47,63 @@ Snake::Snake(sf::RenderWindow *renderWindow, double x, double y, double speed, i
 
 	/* Initialise Graphics */
 	Head = sf::CircleShape(HeadRadius);
-	Head.setFillColor(sf::Color::Green);
+	Head.setTexture(GraphicsFactory::pSnakeHeadS);
 	Head.setPosition(Pos.x, Pos.y);
+
+	Tail = sf::CircleShape(TailRadius);
+	Tail.setTexture(GraphicsFactory::pSnakeBody);
 };
 
 void Snake::Draw()
 {
+	/* Draw Tail */
+	for (int i = 0; i < TailLength; i++)
+	{
+		Tail.setPosition(TailPos[i].x, TailPos[i].y);
+		Window->draw(Tail);
+	}
+	/* Draw Head */
 	Head.setPosition(Pos.x, Pos.y);
 	Window->draw(Head);
 }
 
+// Update the head texture based on the direction the snake is moving
+void Snake::UpdateHeadTexture(int enumValue)
+{
+	switch (enumValue)
+	{
+		case 0:
+			break;
+		case 1: // North
+			Head.setTexture(GraphicsFactory::pSnakeHeadN);
+			break;
+		case 2: // East
+			Head.setTexture(GraphicsFactory::pSnakeHeadE);
+			break;
+		case 3: // South
+			Head.setTexture(GraphicsFactory::pSnakeHeadS);
+			break;
+		case 4: // West
+			Head.setTexture(GraphicsFactory::pSnakeHeadW);
+			break;
+		case 5: // North-East
+			Head.setTexture(GraphicsFactory::pSnakeHeadNE);
+			break;
+		case 6: // South-East
+			Head.setTexture(GraphicsFactory::pSnakeHeadSE);
+			break;
+		case 7: // South-West
+			Head.setTexture(GraphicsFactory::pSnakeHeadSW);
+			break;
+		case 8: // North-West
+			Head.setTexture(GraphicsFactory::pSnakeHeadNW);
+			break;
+		default:
+			break;
+	}
+}
+
+// Make the tail 'length' segments longer
 void Snake::Lengthen(int length) 
 {
     sf::Vector2<float> pos(-10,-10);
@@ -62,6 +113,7 @@ void Snake::Lengthen(int length)
     }
 }
 
+// Checks collision of the head with the tail
 bool Snake::TailHitByHead()
 {
     for (int i = 18; i < TailPos.size(); i++)
@@ -74,6 +126,11 @@ bool Snake::TailHitByHead()
 
 void Snake::UpdateTail() 
 {
-	TailPos.pop_back();
-	TailPos.push_front(Pos);
+	if (TailSegmentCounter >= TailSegmentDistance)
+	{
+		TailPos.pop_back();
+		TailPos.push_front(Pos);
+		TailSegmentCounter = 0;
+	}
+	else TailSegmentCounter++;
 }

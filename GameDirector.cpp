@@ -32,7 +32,7 @@ void GameDirector::GameTurn()
 	}
 }
 
-Rat* GameDirector::CreateRat(sf::RenderWindow *renderWindow, double x, double y)
+Rat* GameDirector::CreateRat(sf::RenderWindow *renderWindow, float x, float y)
 {
 	Rat *r = new Rat(renderWindow, x, y);
 	currentGameObjects.push_back(r);
@@ -41,7 +41,7 @@ Rat* GameDirector::CreateRat(sf::RenderWindow *renderWindow, double x, double y)
 	return r;
 }
 
-Snake* GameDirector::CreateSnake(sf::RenderWindow *renderWindow, double x, double y)
+Snake* GameDirector::CreateSnake(sf::RenderWindow *renderWindow, float x, float y)
 {
 	Snake *s = new Snake(renderWindow, x, y);
 	currentGameObjects.push_back(s);

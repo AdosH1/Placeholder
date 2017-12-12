@@ -8,17 +8,17 @@
 #include "IGameObject.hpp"
 #include "IDrawable.hpp"
 
-class Rat : public IGameObject, public IDrawable, public IObject
+class Rat : public IGameObject, public IDrawable
 {
     public:
-		Rat(sf::RenderWindow *renderWindow, double x, double y);
-		Rat(sf::RenderWindow *renderWindow, double x, double y, double speed);
+		Rat(sf::RenderWindow *renderWindow, float x, float y);
+		Rat(sf::RenderWindow *renderWindow, float x, float y, float speed);
 		~Rat() {};
 
 		sf::RenderWindow *Window;
-        sf::Vector2<double> Pos;
+        sf::Vector2<float> Pos;
 		sf::CircleShape Head;
-		double Speed;
+		float Speed;
 		
 		void Draw() override;
 		void PlayTurn();
@@ -31,7 +31,7 @@ class Rat : public IGameObject, public IDrawable, public IObject
         int count1;
 
     private:
-        const double HeadRadius = 6;
+        const float HeadRadius = 8;
         double step; // take x steps? will probably need this variable
         int dir;
 
@@ -40,5 +40,4 @@ class Rat : public IGameObject, public IDrawable, public IObject
 
 		// deprecated functions - please rewrite
 		int checkhit(sf::Vector2f s_pos, const int s_r, std::deque<float> x, std::deque<float> y, const int t_r);
-		void rmove();
 };
