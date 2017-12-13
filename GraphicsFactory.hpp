@@ -1,10 +1,8 @@
+#pragma once
+
 #ifndef _GRAPHICSFACTORY_HPP_
 #define _GRAPHICSFACTORY_HPP_
 
-#include <iostream>
-#include <deque>
-#include <vector>
-#include <cmath>
 #include "SFML/Graphics.hpp"
 
 class GraphicsFactory

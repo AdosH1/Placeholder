@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Snake.hpp"
+#include "GraphicsFactory.hpp"
 
 Snake::Snake(sf::RenderWindow *renderWindow, float x, float y)
 {
@@ -59,7 +60,8 @@ void Snake::Draw()
 	/* Draw Tail */
 	for (int i = 0; i < TailLength; i++)
 	{
-		Tail.setPosition(TailPos[i].x, TailPos[i].y);
+		//TODO: figure out why we need a 2.0f offset to draw tail correctly
+		Tail.setPosition(TailPos[i].x + 2.0f, TailPos[i].y + 2.0f);
 		Window->draw(Tail);
 	}
 	/* Draw Head */

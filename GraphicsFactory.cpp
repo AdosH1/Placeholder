@@ -1,4 +1,5 @@
 #include "GraphicsFactory.hpp"
+#include <iostream>
 
 /* Declarations - these must be included for static references*/
 sf::Texture *GraphicsFactory::pSnakeHeadN;
